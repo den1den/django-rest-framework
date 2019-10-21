@@ -625,7 +625,7 @@ class BrowsableAPIRenderer(BaseRenderer):
                 paginator.get_results(data)
             except (TypeError, KeyError):
                 return
-        elif not isinstance(data, list):
+        elif not view.action == 'list':
             return
 
         queryset = view.get_queryset()
